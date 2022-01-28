@@ -1,4 +1,5 @@
 import asyncio
+import configparser
 import urllib
 
 
@@ -9,8 +10,9 @@ from aiogram import Bot, types
 
 
 class TelegramBot:
+    f = open('token.txt', 'r')
+    token = f.read()
 
-    token = '5099072370:AAG4kydCgXarsDdHvxwf6Lum57MtQ-u2CSY'
     channel_id = -1001769787001  # это должен быть int, например -1006666666666
     bot = Bot(token=token, parse_mode=types.ParseMode.HTML)
 
@@ -36,3 +38,4 @@ class TelegramBot:
 
 if __name__ == '__main__':
     TelegramBot.send_telegram("hello world!")
+
